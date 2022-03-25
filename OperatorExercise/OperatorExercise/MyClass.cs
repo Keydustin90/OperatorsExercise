@@ -13,12 +13,19 @@ namespace OperatorExercise
 
             Console.WriteLine($"{a}/{b} is {div}remainder {mod}");
 
-            var r = 20;
-            var pi = Math.PI;
+            Console.WriteLine("What is the radius of your circle?");
 
-            var areaOfCircle = pi * (r * r);
+            double realRadius;
+            var radius = double.TryParse(Console.ReadLine(), out realRadius);
 
-            Console.WriteLine($"The area of a circle with radius of {r} is {areaOfCircle}";
+            var areaOfCircle = CalculateArea(realRadius);
+
+            Console.WriteLine($"The area of a circle with radius of {realRadius} is {areaOfCircle}");
+
+
         }
     }
-}
+    public static double CalculateArea (double radius)
+    {
+        return Math.PI * (radius * radius); 
+    }
